@@ -16,6 +16,10 @@ object DatasetExample {
            .map(flight_row => flight_row)
            .show(5)
 
+    flights.take(5)
+           .filter(flight_row => flight_row.ORIGIN_COUNTRY_NAME != "Canada")
+           .map(fr => Flight(fr.DEST_COUNTRY_NAME, fr.ORIGIN_COUNTRY_NAME, fr.count + 5))
+           .show(5)
     spark.stop()
   }
 }
