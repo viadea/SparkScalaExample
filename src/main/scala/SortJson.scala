@@ -6,8 +6,8 @@ object SortJson {
 
     val spark = SparkSession.builder.appName("SortJson").getOrCreate()
     val flightData2015 = spark.read.json("/data/flight-data/json/2015-summary.json")
-    val sortedFlightData2015 = flightData2015.sort("count").collect
-    println(s"Output: $sortedFlightData2015")
+    val sortedFlightData2015 = flightData2015.sort("count")
+    sortedFlightData2015.collect().foreach(println)
     spark.stop()
   }
 }
