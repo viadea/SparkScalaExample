@@ -44,7 +44,7 @@ object ReplaceNull {
     df.na.fill("").show()
     
     // Replace Null in ALL boolean columns.
-    println("====================   3. Replace Null in ALL boolean column(s)   ====================")
+    println("====================   4. Replace Null in ALL boolean column(s)   ====================")
     df.na.fill(true).show()
 
     spark.stop()
