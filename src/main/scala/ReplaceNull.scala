@@ -31,7 +31,7 @@ object ReplaceNull {
     df.show()
     
     // Replace Null in ALL numeric columns.
-    // Here including DoubleType, LongType.
+    // Here including IntegerType, DoubleType, LongType.
     println("====================   1. Replace Null in ALL numeric columns   ====================")
     df.na.fill(0).show()
     
