@@ -20,12 +20,12 @@ object PredicatePushdownTest {
     val q1  = "SELECT * FROM readdf WHERE Index=20000"
     val q2   = "SELECT * FROM readdf where Index=9999999999"
     
-    println(s"====================1.  q1    ====================")
+    println(s"====================1.  $q1    ====================")
     val result1 = spark.sql(q1)
     result1.explain
     result1.collect
 
-    println(s"====================    $q2    ====================")
+    println(s"====================2.  $q2    ====================")
     val result2 = spark.sql(q2)
     result2.explain
     result2.collect
