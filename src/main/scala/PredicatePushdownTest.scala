@@ -12,7 +12,6 @@ object PredicatePushdownTest {
                 config("spark.sql.parquet.filterPushdown",true).
                 getOrCreate()
 
-    val df = spark.read.json("/data/activity-data/")
     val targetdir = "/tmp/test_column_projection/newdf"
     val readdf = spark.read.format("parquet").load(targetdir)
     readdf.createOrReplaceTempView("readdf") 
